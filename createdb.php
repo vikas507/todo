@@ -17,6 +17,7 @@ $sql = "INSERT INTO todo (Date,Time,Activity)  VALUES ('$_POST[date]','$_POST[ti
 
 mysql_query($sql,$con);
 }
+
 mysql_select_db("vikas",$con);
 if(isset($_POST['delete']))
 		{
@@ -54,13 +55,16 @@ $mydata = mysql_query($s,$con);
 				echo "<td>"."<input type=text name=activity value='$record[Activity]'"." < /td>";
 				echo "<td>"."<input type=hidden name=hidden value=".$record['Date']." < /td>";
 				echo "<td>"."<input type=submit name=delete value=delete"." < /td>";
-				echo "<tr>";
+				echo "</tr>";
 				echo"</form>";
+				
 				
 			}
 			echo "</table>";
 		echo "</center>";
 		}
+
+
 mysql_close($con);
 
 
@@ -68,4 +72,3 @@ mysql_close($con);
 
 </body>
 </html>
-# todo todo.html
